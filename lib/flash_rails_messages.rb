@@ -1,5 +1,13 @@
 require "flash_rails_messages/version"
 
-module FlashRailsMessages
-  # Your code goes here...
+module ActionView
+  module Helpers
+    module FlashRailsMessages
+
+    end
+  end
+end
+
+if defined?(ActionView::Helpers)
+  ActionView::Helpers.autoload :FlashRailsMessages
 end
