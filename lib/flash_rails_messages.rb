@@ -2,7 +2,7 @@ require "flash_rails_messages/version"
 
 module ActionView
   module Helpers
-    module FlashRailsMessages
+    module FlashRailsMessagesHelper
 
       FLASH_TYPES = [:notice, :warning, :alert]
 
@@ -46,5 +46,6 @@ module ActionView
 end
 
 if defined?(ActionView::Helpers)
-  ActionView::Helpers.autoload :FlashRailsMessages
+  ActionView::Helpers.autoload :FlashRailsMessagesHelper
+  ActionView::Helpers.send(:include, ActionView::Helpers::FlashRailsMessagesHelper)
 end
