@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = FlashRailsMessages::VERSION
   spec.authors       = ["Alejandro Gutiérrez"]
   spec.email         = ["alejandrodevs@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = "A simple helper to display flash rails messages"
+  spec.summary       = "This gems provides an easy way to display flash rails messages"
+  spec.homepage      = "https://github.com/alejandrogutierrez/flash_rails_messages"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
