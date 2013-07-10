@@ -48,6 +48,5 @@ module ActionView
 end
 
 if defined?(ActionView::Helpers)
-  ActionView::Helpers.autoload :FlashRailsMessagesHelper
   ActionView::Helpers.send(:include, ActionView::Helpers::FlashRailsMessagesHelper)
 end
