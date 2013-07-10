@@ -1,6 +1,6 @@
 # FlashRailsMessages
 
-TODO: Write a gem description
+This gem provides an easy and simple way to display flash messages to your users to inform them that an action has or hasn't taken place. It's using the bootstrap framework.
 
 ## Installation
 
@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You only need to add this line wherever you want to display the messages:
+
+    <%= render_flash_messages %>
+
+You can add the line above in your html in multiple places.
 
 ## Contributing
 
