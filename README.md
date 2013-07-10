@@ -1,4 +1,4 @@
-# FlashRailsMessages
+# FlashRailsMessages[![Build Status](https://travis-ci.org/alejandrogutierrez/flash_rails_messages.png?branch=master)](https://travis-ci.org/alejandrogutierrez/flash_rails_messages)
 
 This gem provides an easy and simple way to display flash messages to your users to inform them that an action has or hasn't taken place. It's using the bootstrap framework.
 
