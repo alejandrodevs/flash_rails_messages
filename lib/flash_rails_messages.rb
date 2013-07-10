@@ -6,7 +6,7 @@ module ActionView
 
       FLASH_TYPES = [:notice, :warning, :alert]
 
-      def render_messages
+      def render_flash_messages
         FLASH_TYPES.each do |type|
           flash_messages << alert_element(type) if flash[type]
           clean_flash_message(type)
