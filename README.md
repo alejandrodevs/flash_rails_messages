@@ -33,6 +33,7 @@ The flash messages are displayed according to the flash type.
 
 **By default shows a yellow alert.**
 
+*NOTE*
 In next versions styles will be customizable.
 
 ## Contributing
