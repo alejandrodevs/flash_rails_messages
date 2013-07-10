@@ -4,11 +4,9 @@ module ActionView
   module Helpers
     module FlashRailsMessagesHelper
 
-      FLASH_TYPES = [:notice, :warning, :alert]
-
       def render_flash_messages
-        FLASH_TYPES.each do |type|
-          flash_messages << alert_element(type) if flash[type]
+        flash.each do |type, msg|
+          flash_messages << alert_element(type, msg) if msg
           clean_flash_message(type)
         end
 
@@ -21,19 +19,23 @@ module ActionView
         flash[type] = nil
       end
 
-      def alert_element type
-        content_tag(:div, close_element + flash[type], :class => alert_classes(type))
+      def alert_element type, msg
+        content_tag(:div, close_element + msg, :class => alert_classes(type))
       end
 
       def close_element
-        content_tag :span, "&times;".html_safe, :class => "close", :"data-dismiss" => "alert"
+        content_tag(:span, "&times;".html_safe, :class => "close", :"data-dismiss" => "alert")
       end
 
       def alert_classes type
+        "alert #{custom_classes(type)}"
+      end
+
+      def custom_classes type
         case type
-        when :notice  then "alert alert-success"
-        when :warning then "alert alert-warning"
-        when :alert   then "alert alert-error"
+        when :success then "alert-success"
+        when :notice  then "alert-info"
+        when :alert   then "alert-error"
         end
       end
 
