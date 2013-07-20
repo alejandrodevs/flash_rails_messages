@@ -7,17 +7,13 @@ module ActionView
       def render_flash_messages
         flash.each do |type, msg|
           flash_messages << alert_element(type, msg) if msg
-          clean_flash_message(type)
+          flash[type] = nil
         end
 
         flash_messages.html_safe
       end
 
       private
-
-      def clean_flash_message type
-        flash[type] = nil
-      end
 
       def alert_element type, msg
         content_tag(:div, close_element + msg, :class => alert_classes(type))
