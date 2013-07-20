@@ -28,10 +28,10 @@ module ActionView
       end
 
       def alert_classes type
-        "alert #{custom_classes(type)}"
+        "alert #{default_class(type)} alert-#{type}"
       end
 
-      def custom_classes type
+      def default_class type
         case type
         when :success then "alert-success"
         when :notice  then "alert-info"
