@@ -15,21 +15,24 @@ describe ActionView::Helpers::FlashRailsMessagesHelper do
       context "when flash type is notice" do
         it "returns the correct message" do
           subject.stub(:flash).and_return({:notice => "notice"})
-          expect(subject.render_flash_messages).to eql(alert_element("notice", "info", "notice"))
+          alert_expected = alert_element("notice", "info", "notice")
+          expect(subject.render_flash_messages).to eql(alert_expected)
         end
       end
 
       context "when flash type is success" do
         it "returns the correct message" do
           subject.stub(:flash).and_return({:success => "success"})
-          expect(subject.render_flash_messages).to eql(alert_element("success", "success", "success"))
+          alert_expected = alert_element("success", "success", "success")
+          expect(subject.render_flash_messages).to eql(alert_expected)
         end
       end
 
       context "when flash type is alert" do
         it "returns the correct message" do
           subject.stub(:flash).and_return({:alert => "alert"})
-          expect(subject.render_flash_messages).to eql(alert_element("alert", "error", "alert"))
+          alert_expected = alert_element("alert", "error", "alert")
+          expect(subject.render_flash_messages).to eql(alert_expected)
         end
       end
 
@@ -46,10 +49,13 @@ describe ActionView::Helpers::FlashRailsMessagesHelper do
   end
 
   def alert_element msg, klass, type
-    subject.content_tag(:div, close_element + msg ,:class => "alert alert-#{klass} alert-#{type}")
+    subject.content_tag(:div, close_element + msg,
+                        :class => "alert alert-#{klass} alert-#{type}")
   end
 
   def close_element
-    subject.content_tag(:span, "&times;".html_safe, :class => "close", :"data-dismiss" => "alert")
+    subject.content_tag(:span, "&times;".html_safe,
+                        :class => "close",
+                        :"data-dismiss" => "alert")
   end
 end
