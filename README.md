@@ -31,13 +31,15 @@ The flash messages are displayed according to the flash type.
 By default shows a yellow alert.
 
 **success**
-Shows a green alert
+- Shows a green alert
 
 **notice**
-Shows a blue alert
+- Shows a blue alert
 
 **alert**
-Shows a red alert
+- Shows a red alert
+
+## Customize alerts
 
 By the way, the alerts are customizable. They will have a specific class according to the flash key. Example...
 
