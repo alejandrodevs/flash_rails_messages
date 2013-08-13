@@ -16,7 +16,7 @@ module ActionView
       private
 
       def alert_element type, msg
-        content_tag(:div, close_element + msg, :class => alert_classes(type))
+        content_tag(:div, close_element + msg.html_safe, :class => alert_classes(type))
       end
 
       def close_element
