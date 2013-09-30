@@ -7,7 +7,7 @@ module FlashRailsMessages
     #   <%= render_flash_messages %>
     #
     def render_flash_messages
-        FlashRailsMessages::Base.new.render(flash)
+      FlashRailsMessages::Base.new.render(flash)
     end
 
   end

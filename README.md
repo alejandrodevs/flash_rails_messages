@@ -1,6 +1,8 @@
-# FlashRailsMessages[![Build Status](https://travis-ci.org/alejandrogutierrez/flash_rails_messages.png?branch=master)](https://travis-ci.org/alejandrogutierrez/flash_rails_messages)
+# FlashRailsMessages
 
-This gem provides an easy and simple way to display flash messages to your users to inform them that an action has or hasn't taken place. It's using the
+[![Build Status](https://travis-ci.org/alejandrogutierrez/flash_rails_messages.png?branch=master)](https://travis-ci.org/alejandrogutierrez/flash_rails_messages)
+
+This gem provides an easy and simple way to display flash messages in a fancy way. It's using the
 [bootstrap](http://twitter.github.io/bootstrap)
 framework.
 
@@ -24,7 +26,7 @@ You only need to add this line wherever you want to display the messages:
 
     <%= render_flash_messages %>
 
-You can add the line above in your html in multiple places.
+You should add the line above in your html view. You can add it in multiple places.
 
 
 The flash messages are displayed according to the flash type. By default shows a yellow alert.
@@ -44,11 +46,11 @@ By the way, the alerts are customizable. They will have a specific class accordi
 
     flash[:whatever] = "Some flash rails message"
 
-Will generate a html class in the alert wrapper like this `alert-whatever` to customize the css style.
+It'll generate a class in the html alert wrapper like this `alert-whatever` to customize the style.
 
 ## Adding HTML elements
 
-The alerts that will be generated can include html elements. You just add html elements in the flash message.
+The alerts that will be generated can include html elements. You just need to add html elements in the flash message.
 Example...
 
     flash[:success] = "<strong>This text will be bold</strong> and this one will be normal"
