@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ActionView::Helpers::FlashRailsMessagesHelper do
+describe FlashRailsMessages::Helper do
   let!(:subject){ ActionView::Base.new }
 
   describe "#render_flash_messages" do
