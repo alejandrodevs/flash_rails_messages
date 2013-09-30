@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/alejandrogutierrez/flash_rails_messages.png?branch=master)](https://travis-ci.org/alejandrogutierrez/flash_rails_messages)
 
-This gem provides an easy and simple way to display flash messages in a fancy way. It's using the
+This gem provides an easy and simple way to display flash messages in a fancy way. It requires the
 [bootstrap](http://twitter.github.io/bootstrap)
 framework.
 
@@ -28,6 +28,7 @@ You only need to add this line wherever you want to display the messages:
 
 You should add the line above in your html view. You can add it in multiple places.
 
+## Defaults
 
 The flash messages are displayed according to the flash type. By default shows a yellow alert.
 
