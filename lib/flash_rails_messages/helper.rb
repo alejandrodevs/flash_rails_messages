@@ -1,33 +1,13 @@
 module FlashRailsMessages
   module Helper
 
+    # Returns flash rails messages that will be displayed in your DOM. Just
+    # call this method from your html view.
+    #
+    #   <%= render_flash_messages %>
+    #
     def render_flash_messages
-      flash_messages = ""
-
-      flash.each do |type, msg|
-        flash_messages << alert_element(type, msg) if msg
-        flash[type] = nil
-      end
-
-      flash_messages.html_safe
-    end
-
-    private
-
-    def alert_element type, msg
-      content_tag(:div, close_element + msg.html_safe, :class => "alert #{default_class(type)} alert-#{type}")
-    end
-
-    def close_element
-      content_tag(:span, "&times;".html_safe, :class => "close", :"data-dismiss" => "alert")
-    end
-
-    def default_class type
-      case type
-      when :success then "alert-success"
-      when :notice  then "alert-info"
-      when :alert   then "alert-error"
-      end
+        FlashRailsMessages::Base.new.render(flash)
     end
 
   end
