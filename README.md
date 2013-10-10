@@ -30,16 +30,16 @@ You should add the line above in your html view. You can add it in multiple plac
 
 The flash messages are displayed according to the flash key. Examples...
 
-###### success
+**success**
 ![Success Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/success.png)
 
-###### notice
+**notice**
 ![Notice Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/notice.png)
 
-###### alert
+**alert**
 ![Alert Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/alert.png)
 
-###### other key (default)
+**other key (default)**
 ![Default Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/default.png)
 
 ## Customize alerts
