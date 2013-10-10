@@ -28,7 +28,7 @@ You should add the line above in your html view. You can add it in multiple plac
 
 ## Defaults
 
-The flash messages are displayed according to the flash type (flash key). By default shows a yellow alert.
+The flash messages are displayed according to the flash key. Examples...
 
 ###### success
 ![Success Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/success.png)
@@ -46,7 +46,9 @@ The flash messages are displayed according to the flash type (flash key). By def
 
 By the way, the alerts are customizable. They will have a specific class according to the flash key. Example...
 
-    flash[:whatever] = "Some flash rails message"
+```ruby
+flash[:whatever] = "Some flash rails message"
+```
 
 It'll generate a class in the html alert wrapper like this `alert-whatever` to customize the style.
 
@@ -55,7 +57,9 @@ It'll generate a class in the html alert wrapper like this `alert-whatever` to c
 The alerts that will be generated can include html elements. You just need to add html elements in the flash message.
 Example...
 
-    flash[:success] = "<strong>This text will be bold</strong> and this one will be normal"
+```ruby
+flash[:success] = "<strong>This text will be bold</strong> and this one will be normal"
+```
 
 ## Contributing
 
