@@ -28,16 +28,19 @@ You should add the line above in your html view. You can add it in multiple plac
 
 ## Defaults
 
-The flash messages are displayed according to the flash type. By default shows a yellow alert.
+The flash messages are displayed according to the flash type (flash key). By default shows a yellow alert.
 
-**success**
-- Shows a green alert
+###### success
+![Success Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/success.png)
 
-**notice**
-- Shows a blue alert
+###### notice
+![Notice Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/notice.png)
 
-**alert**
-- Shows a red alert
+###### alert
+![Alert Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/alert.png)
+
+###### other key (default)
+![Default Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/default.png)
 
 ## Customize alerts
 
