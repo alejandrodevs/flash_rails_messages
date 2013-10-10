@@ -58,8 +58,11 @@ The alerts that will be generated can include html elements. You just need to ad
 Example...
 
 ```ruby
-flash[:success] = "<strong>This text will be bold</strong> and this one will be normal"
+flash[:success] = "<strong>This text will be bold</strong> and this will be normal"
 ```
+
+The line above will generate this:
+![Success HTML Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/success2.png)
 
 ## Contributing
 
