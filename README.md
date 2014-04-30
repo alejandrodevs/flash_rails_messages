@@ -36,7 +36,7 @@ The flash messages are displayed according to the flash key. Examples...
 **notice**
 ![Notice Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/notice.png)
 
-**alert**
+**alert or error**
 ![Alert Alert](https://raw.github.com/alejandrogutierrez/flash_rails_messages/master/images/alert.png)
 
 **other key (default)**
