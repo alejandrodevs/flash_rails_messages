@@ -3,7 +3,7 @@ module FlashRailsMessages
     include ActionView::Helpers::TagHelper
 
     def render flash
-      flash_messages = ""
+      flash_messages = ''
 
       flash.each do |type, msg|
         flash_messages << alert_element(type, msg) if msg
@@ -16,11 +16,11 @@ module FlashRailsMessages
     private
 
     def alert_element type, msg
-      content_tag(:div, close_element + msg.html_safe, :class => alert_classes(type))
+      content_tag(:div, close_element + msg.html_safe, class: alert_classes(type))
     end
 
     def close_element
-      content_tag(:span, "&times;".html_safe, :class => "close", :"data-dismiss" => "alert")
+      content_tag(:span, '&times;'.html_safe, class: 'close', :"data-dismiss" => 'alert')
     end
 
     def alert_classes type
@@ -29,11 +29,10 @@ module FlashRailsMessages
 
     def default_class type
       case type
-      when :success       then "alert-success"
-      when :notice        then "alert-info"
-      when :alert, :error then "alert-error"
+      when :success       then 'alert-success'
+      when :notice        then 'alert-info'
+      when :alert, :error then 'alert-error'
       end
     end
-
   end
 end
