@@ -29,9 +29,9 @@ module FlashRailsMessages
 
     def default_class type
       case type
-      when :success then "alert-success"
-      when :notice  then "alert-info"
-      when :alert   then "alert-error"
+      when :success       then "alert-success"
+      when :notice        then "alert-info"
+      when :alert, :error then "alert-error"
       end
     end
 
