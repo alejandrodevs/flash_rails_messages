@@ -10,7 +10,7 @@ module FlashRailsMessages
     end
 
     def render(flash)
-      flash.map { |message| alert_element(*message) }.join.html_safe
+      flash.symbolize_keys.map { |message| alert_element(*message) }.join.html_safe
     end
 
     private
