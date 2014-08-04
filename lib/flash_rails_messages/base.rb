@@ -3,14 +3,9 @@ module FlashRailsMessages
     include ActionView::Helpers::TagHelper
     include ActionView::Context
 
-    attr_accessor :options
-
-    def initialize(options = {})
-      @options = options
-    end
-
     def render(flash)
-      Hash[flash].symbolize_keys.map { |message| alert_element(*message) }.join.html_safe
+      flash = Hash[flash].symbolize_keys
+      flash.map { |message| alert_element(*message) }.join.html_safe
     end
 
     private
