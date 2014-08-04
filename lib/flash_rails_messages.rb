@@ -4,6 +4,6 @@ module FlashRailsMessages
   autoload :VERSION, 'flash_rails_messages/version'
 end
 
-if defined?(ActionView::Helpers)
-  ActionView::Helpers.send(:include, FlashRailsMessages::Helper)
+ActiveSupport.on_load(:action_view) do
+  include FlashRailsMessages::Helper
 end
