@@ -1,38 +1,51 @@
 module FlashRailsMessages
   class Base
     include ActionView::Helpers::TagHelper
+    include ActionView::Context
 
-    def render flash
-      flash_messages = ''
+    attr_accessor :options
 
-      flash.each do |type, msg|
-        flash_messages << alert_element(type, msg) if msg
-        flash[type] = nil
-      end
+    def initialize(options = {})
+      @options = options
+    end
 
-      flash_messages.html_safe
+    def render(flash)
+      flash.map { |message| alert_element(*message) }.join.html_safe
     end
 
     private
 
-    def alert_element type, msg
-      content_tag(:div, close_element + msg.html_safe, class: alert_classes(type))
+    def alert_element(type, message)
+      content_tag :div, class: alert_classes(type) do
+        close_element + message.html_safe
+      end
     end
 
     def close_element
-      content_tag(:span, '&times;'.html_safe, class: 'close', :"data-dismiss" => 'alert')
-    end
-
-    def alert_classes type
-      "alert #{default_class(type)} alert-#{type}"
-    end
-
-    def default_class type
-      case type
-      when :success       then 'alert-success'
-      when :notice        then 'alert-info'
-      when :alert, :error then 'alert-error'
+      content_tag :span, class: 'close', :'data-dismiss' => 'alert' do
+        '&times;'.html_safe
       end
+    end
+
+    def alert_classes(type)
+      "#{default_alert_class} #{alert_type_classes[type]} #{custom_alert_class(type)}"
+    end
+
+    def default_alert_class
+      'alert'
+    end
+
+    def alert_type_classes
+      {
+        success: 'alert-success',
+        notice: 'alert-info',
+        alert: 'alert-error',
+        error: 'alert-error',
+      }
+    end
+
+    def custom_alert_class(type)
+      "alert-#{type}"
     end
   end
 end
