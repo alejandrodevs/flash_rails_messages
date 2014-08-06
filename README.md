@@ -16,6 +16,22 @@ gem 'flash_rails_messages'
 Run the bundle command to install it.
 
 
+### Bootstrap
+To integrate FlashRailsMessages with Bootstrap run the next:
+```console
+rails generate flash_rails_messages:install --bootstrap
+```
+NOTE: Be sure that you added Bootstrap assets on your application.
+
+
+### Zurb Foundation 3
+To integrate FlashRailsMessages with Zurb Foundation 3 run the next:
+```console
+rails generate flash_rails_messages:install --foundation
+```
+NOTE: Be sure that you added Foundation assets on your application.
+
+
 ## Basic Usage
 You just need to add the line below in your layout:
 ```ruby
