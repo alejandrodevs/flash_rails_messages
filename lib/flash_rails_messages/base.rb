@@ -17,13 +17,13 @@ module FlashRailsMessages
     end
 
     def close_element
-      content_tag :span, class: 'close', :'data-dismiss' => 'alert' do
+      content_tag :a, class: 'close', href: '#' do
         '&times;'.html_safe
       end
     end
 
     def alert_classes(type)
-      "#{default_alert_class} #{alert_type_classes[type]}"
+      "#{default_alert_class} #{alert_type_classes[type]} #{custom_alert_classes}".strip
     end
 
     def default_alert_class
@@ -31,12 +31,10 @@ module FlashRailsMessages
     end
 
     def alert_type_classes
-      {
-        success: 'alert-success',
-        notice: 'alert-info',
-        alert: 'alert-error',
-        error: 'alert-error',
-      }
+      {}
+    end
+
+    def custom_alert_classes
     end
   end
 end

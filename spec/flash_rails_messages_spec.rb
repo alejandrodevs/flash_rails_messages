@@ -56,12 +56,10 @@ describe FlashRailsMessages::Helper do
   end
 
   def alert_element msg, klass
-    subject.content_tag(:div, close_element + msg,
-                        class: "alert alert-#{klass}")
+    subject.content_tag(:div, close_element + msg.html_safe, class: 'alert')
   end
 
   def close_element
-    subject.content_tag(:span, '&times;'.html_safe, class: 'close',
-                        :"data-dismiss" => 'alert')
+    subject.content_tag(:a, '&times;'.html_safe, class: 'close', href: '#')
   end
 end

@@ -4,8 +4,8 @@
 [![Coverage Status](https://coveralls.io/repos/alejandrogutierrez/flash_rails_messages/badge.png)](https://coveralls.io/r/alejandrogutierrez/flash_rails_messages)
 
 
-This gem provides an easy and simple way to display flash messages in a fancy way.
-It requires the [bootstrap](http://twitter.github.io/bootstrap) framework.
+This gem provides an easy and simple way to display flash messages. This
+works with bootstrap and zurb foundation frameworks.
 
 
 ## Installation
