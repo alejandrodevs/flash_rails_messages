@@ -23,7 +23,7 @@ module FlashRailsMessages
     end
 
     def alert_classes(type)
-      "#{default_alert_class} #{alert_type_classes[type]} #{custom_alert_class(type)}"
+      "#{default_alert_class} #{alert_type_classes[type]}"
     end
 
     def default_alert_class
@@ -37,10 +37,6 @@ module FlashRailsMessages
         alert: 'alert-error',
         error: 'alert-error',
       }
-    end
-
-    def custom_alert_class(type)
-      "alert-#{type}"
     end
   end
 end
