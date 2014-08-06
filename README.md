@@ -4,8 +4,8 @@
 [![Coverage Status](https://coveralls.io/repos/alejandrogutierrez/flash_rails_messages/badge.png)](https://coveralls.io/r/alejandrogutierrez/flash_rails_messages)
 
 
-This gem provides an easy and simple way to display flash messages. This
-works with bootstrap and zurb foundation frameworks.
+This gem provides an easy and simple way to display flash rails messages.
+This works with [Bootstrap](http://getbootstrap.com/) and [Zurb Foundation 3](http://foundation.zurb.com/) frameworks.
 
 
 ## Installation
@@ -17,7 +17,7 @@ Run the bundle command to install it.
 
 
 ### Bootstrap
-To integrate FlashRailsMessages with Bootstrap run the next:
+To integrate **FlashRailsMessages** with [Bootstrap](http://getbootstrap.com/) run the next:
 ```console
 rails generate flash_rails_messages:install --bootstrap
 ```
@@ -25,16 +25,16 @@ NOTE: Be sure that you added Bootstrap assets on your application.
 
 
 ### Zurb Foundation 3
-To integrate FlashRailsMessages with Zurb Foundation 3 run the next:
+To integrate **FlashRailsMessages** with [Zurb Foundation 3](http://foundation.zurb.com/) run the next:
 ```console
 rails generate flash_rails_messages:install --foundation
 ```
 NOTE: Be sure that you added Foundation assets on your application.
 
 
-## Basic Usage
+## Usage
 You just need to add the line below in your layout:
-```ruby
+```erb
 <%= render_flash_messages %>
 ```
 
