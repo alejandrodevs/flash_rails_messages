@@ -39,6 +39,10 @@ You just need to add the line below in your layout:
 ```
 
 
+## Customize alert
+Just update your **FlashRailsMessages** initializer according to your needs.
+
+
 ## Contributing
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
