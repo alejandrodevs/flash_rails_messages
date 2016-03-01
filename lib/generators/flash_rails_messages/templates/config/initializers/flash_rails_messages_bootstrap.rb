@@ -23,9 +23,9 @@ module FlashRailsMessages
     def alert_type_classes
       {
         success: 'alert-success',
-        notice: 'alert-info',
-        alert: 'alert-error',
-        error: 'alert-error',
+        notice: 'alert-success',
+        alert: 'alert-danger',
+        error: 'alert-danger',
       }
     end
 
