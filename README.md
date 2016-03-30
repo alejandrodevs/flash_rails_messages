@@ -1,7 +1,5 @@
 # FlashRailsMessages
-
-[![Build Status](https://travis-ci.org/alejandrogutierrez/flash_rails_messages.png?branch=master)](https://travis-ci.org/alejandrogutierrez/flash_rails_messages)
-[![Coverage Status](https://coveralls.io/repos/alejandrogutierrez/flash_rails_messages/badge.png)](https://coveralls.io/r/alejandrogutierrez/flash_rails_messages)
+[![Build Status](https://travis-ci.org/alejandrodevs/flash_rails_messages.png?branch=master)](https://travis-ci.org/alejandrodevs/flash_rails_messages) [![Coverage Status](https://coveralls.io/repos/github/alejandrodevs/flash_rails_messages/badge.svg?branch=master)](https://coveralls.io/github/alejandrodevs/flash_rails_messages?branch=master)
 
 
 This gem provides an easy and simple way to display flash rails messages.

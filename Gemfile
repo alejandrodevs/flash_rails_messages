@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rails', '~> 3.2.13'
 gem 'rspec'
 gem 'simplecov'
+gem 'rails', '>= 4.0'
 gem 'coveralls', require: false
