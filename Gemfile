@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
+# Specify your gem's dependencies in flash_rails_messages.gemspec
 gemspec
 
 gem 'simplecov'
-gem 'rails', '>= 4.0'
-gem 'rspec', '~> 3.4.0'
 gem 'coveralls', require: false
