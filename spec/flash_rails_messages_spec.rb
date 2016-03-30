@@ -6,7 +6,7 @@ describe FlashRailsMessages::Helper do
   describe '#render_flash_messages' do
     context 'when flash does not have messages' do
       it 'returns nothing' do
-        subject.stub(:flash).and_return({})
+        allow(subject).to receive(:flash).and_return({})
         expect(subject.render_flash_messages).to eql('')
       end
     end
@@ -14,7 +14,7 @@ describe FlashRailsMessages::Helper do
     context 'when flash has messages' do
       context 'when flash type is notice' do
         it 'returns the correct message' do
-          subject.stub(:flash).and_return({ notice: 'notice' })
+          allow(subject).to receive(:flash).and_return({ notice: 'notice' })
           alert_expected = alert_element('notice', 'info')
           expect(subject.render_flash_messages).to eql(alert_expected)
         end
@@ -22,7 +22,7 @@ describe FlashRailsMessages::Helper do
 
       context 'when flash type is success' do
         it 'returns the correct message' do
-          subject.stub(:flash).and_return({ success: 'success' })
+          allow(subject).to receive(:flash).and_return({ success: 'success' })
           alert_expected = alert_element('success', 'success')
           expect(subject.render_flash_messages).to eql(alert_expected)
         end
@@ -30,7 +30,7 @@ describe FlashRailsMessages::Helper do
 
       context 'when flash type is alert' do
         it 'returns the correct message' do
-          subject.stub(:flash).and_return({ alert: 'alert' })
+          allow(subject).to receive(:flash).and_return({ alert: 'alert' })
           alert_expected = alert_element('alert', 'error')
           expect(subject.render_flash_messages).to eql(alert_expected)
         end
@@ -38,7 +38,7 @@ describe FlashRailsMessages::Helper do
 
       context 'when flash type is error' do
         it 'returns the correct message' do
-          subject.stub(:flash).and_return({ error: 'error' })
+          allow(subject).to receive(:flash).and_return({ error: 'error' })
           alert_expected = alert_element('error', 'error')
           expect(subject.render_flash_messages).to eql(alert_expected)
         end
@@ -46,7 +46,7 @@ describe FlashRailsMessages::Helper do
 
       context 'when has more than one message' do
         it 'returns all the correct messages' do
-          subject.stub(:flash).and_return({ alert: 'alert', notice: 'notice' })
+          allow(subject).to receive(:flash).and_return({ alert: 'alert', notice: 'notice' })
           alerts_expected = alert_element('alert', 'error') +
                             alert_element('notice', 'info')
           expect(subject.render_flash_messages).to eql(alerts_expected)
