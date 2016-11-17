@@ -4,3 +4,6 @@ rvm:
   - 2.2.5
   - 2.3.0
   - 2.3.1
+gemfile:
+  - gemfiles/rails_4.gemfile
+  - gemfiles/rails_5.gemfile
