@@ -1,10 +1,6 @@
 require 'bundler/gem_tasks'
+require 'rspec/core/rake_task'
 
-namespace :rspec do
-  desc 'Running all tests'
-  task :all do
-    system('rspec')
-  end
-end
+RSpec::Core::RakeTask.new(:spec)
 
-task default: ['rspec:all']
+task default: :spec

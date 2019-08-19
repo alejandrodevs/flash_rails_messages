@@ -1,7 +1,11 @@
 require 'spec_helper'
 
-describe FlashRailsMessages::Helper do
-  let!(:subject){ ActionView::Base.new }
+RSpec.describe FlashRailsMessages::Helper do
+  let(:subject) do
+    ActionView::Base.new(
+      ActionView::LookupContext.new([])
+    )
+  end
 
   describe '#render_flash_messages' do
     context 'when flash does not have messages' do

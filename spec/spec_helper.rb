@@ -1,9 +1,12 @@
 require 'coveralls'
 Coveralls.wear!
 
-require 'simplecov'
-SimpleCov.start
-
 require 'action_view'
+require 'bundler/setup'
 require 'flash_rails_messages'
-require 'rails/all'
+
+RSpec.configure do |config|
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+end
