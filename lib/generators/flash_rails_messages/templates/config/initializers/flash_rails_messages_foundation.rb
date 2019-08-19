@@ -4,7 +4,7 @@ module FlashRailsMessages
     # =========================================
 
     def alert_element(type, message)
-      content_tag :div, class: alert_classes(type), :'data-alert' => '' do
+      content_tag :div, class: alert_classes(type), 'data-alert': '' do
         close_element + message.html_safe
       end
     end

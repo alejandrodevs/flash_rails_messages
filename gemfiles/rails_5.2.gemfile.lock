@@ -154,12 +154,12 @@ PLATFORMS
 
 DEPENDENCIES
   appraisal (~> 2.2)
-  bundler (>= 1.3)
+  bundler (~> 2.0)
   coveralls (~> 0.8)
   flash_rails_messages!
   rails (~> 5.2)
   rake (~> 12.0)
-  rspec (~> 3.0)
+  rspec (~> 3.8)
 
 BUNDLED WITH
-   1.17.2
+   2.0.2
