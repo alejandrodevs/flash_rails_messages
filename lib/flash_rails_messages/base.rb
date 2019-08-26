@@ -1,7 +1,13 @@
 module FlashRailsMessages
   class Base
-    include ActionView::Helpers::TagHelper
     include ActionView::Context
+    include ActionView::Helpers::TagHelper
+
+    attr_reader :options
+
+    def initialize(options = {})
+      @options = options
+    end
 
     def render(flash)
       flash = Hash[flash].symbolize_keys
@@ -11,8 +17,11 @@ module FlashRailsMessages
     private
 
     def alert_element(type, message)
-      content_tag :div, class: alert_classes(type) do
-        close_element + message.html_safe
+      content_tag :div, alert_options(type) do
+        content = ActiveSupport::SafeBuffer.new
+        content += close_element if options.fetch(:dismissible, false)
+        content += message.html_safe
+        content
       end
     end
 
@@ -22,8 +31,18 @@ module FlashRailsMessages
       end
     end
 
+    def alert_options(type)
+      options.slice(:id, :class)
+        .merge(class: alert_classes(type))
+    end
+
     def alert_classes(type)
-      "#{default_alert_classes} #{alert_type_classes[type]} #{custom_alert_classes}".strip
+      [
+        default_alert_classes,
+        alert_type_classes[type],
+        custom_alert_classes,
+        options[:class]
+      ].compact.join(' ').strip
     end
 
     def default_alert_classes
