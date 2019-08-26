@@ -32,7 +32,7 @@ module FlashRailsMessages
     end
 
     def alert_options(type)
-      options.slice(:id, :class)
+      options.except(:dismissible)
         .merge(class: alert_classes(type))
     end
 
