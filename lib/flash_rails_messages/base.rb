@@ -23,10 +23,10 @@ module FlashRailsMessages
     end
 
     def alert_classes(type)
-      "#{default_alert_class} #{alert_type_classes[type]} #{custom_alert_classes}".strip
+      "#{default_alert_classes} #{alert_type_classes[type]} #{custom_alert_classes}".strip
     end
 
-    def default_alert_class
+    def default_alert_classes
       'alert'
     end
 

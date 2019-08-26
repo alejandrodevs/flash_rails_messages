@@ -16,7 +16,7 @@ module FlashRailsMessages
       end
     end
 
-    def default_alert_class
+    def default_alert_classes
       'alert'
     end
 
@@ -29,7 +29,7 @@ module FlashRailsMessages
       }
     end
 
-    def custom_alert_class
+    def custom_alert_classes
       'alert-dismissible'
     end
   end
