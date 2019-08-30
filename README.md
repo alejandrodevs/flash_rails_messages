@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/alejandrodevs/flash_rails_messages.svg?branch=master)](https://travis-ci.org/alejandrodevs/flash_rails_messages) [![Coverage Status](https://coveralls.io/repos/github/alejandrodevs/flash_rails_messages/badge.svg?branch=master)](https://coveralls.io/github/alejandrodevs/flash_rails_messages?branch=master)
 
 This gem provides an easy and simple way to display flash rails messages.
-This works with [Bootstrap](http://getbootstrap.com/) and [Zurb Foundation 3](http://foundation.zurb.com/) frameworks.
+This works with [Bootstrap 4+](http://getbootstrap.com/) and [Zurb Foundation 6+](http://foundation.zurb.com/) frameworks.
 
 ## Installation
 
