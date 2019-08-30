@@ -20,7 +20,7 @@ Or install it yourself as:
 
     $ gem install flash_rails_messages
 
-### Bootstrap
+### Bootstrap 4+
 
 To integrate **FlashRailsMessages** with [Bootstrap](http://getbootstrap.com/) run the next:
 
@@ -31,7 +31,7 @@ rails generate flash_rails_messages:install --bootstrap
 NOTE: Be sure that you added Bootstrap to your application.
 
 
-### Zurb Foundation 3
+### Zurb Foundation 6+
 
 To integrate **FlashRailsMessages** with [Zurb Foundation 3](http://foundation.zurb.com/) run the next:
 
@@ -47,6 +47,18 @@ You just need to add the line below in your layout:
 
 ```erb
 <%= render_flash_messages %>
+```
+
+### Dismissible alerts
+
+```erb
+<%= render_flash_messages dismissible: true %>
+```
+
+### Passing other options
+
+```erb
+<%= render_flash_messages dismissible: true, id: 'my-alert', class: 'custom-class' %>
 ```
 
 ## Development

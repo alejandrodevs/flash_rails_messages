@@ -32,7 +32,8 @@ module FlashRailsMessages
     end
 
     def alert_options(type)
-      options.except(:dismissible)
+      default_alert_options
+        .merge(options.except(:dismissible))
         .merge(class: alert_classes(type))
     end
 
@@ -43,6 +44,10 @@ module FlashRailsMessages
         custom_alert_classes,
         options[:class]
       ].compact.join(' ').strip
+    end
+
+    def default_alert_options
+      {}
     end
 
     def default_alert_classes

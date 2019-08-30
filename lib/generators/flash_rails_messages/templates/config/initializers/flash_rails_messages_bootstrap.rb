@@ -3,11 +3,14 @@ module FlashRailsMessages
     # BOOTSTRAP FRAMEWORK
     # =========================================
 
-    def alert_element(type, message)
-      content_tag :div, class: alert_classes(type), role: 'alert' do
-        close_element + message.html_safe
-      end
-    end
+    # def alert_element(type, message)
+      # content_tag :div, alert_options(type) do
+        # content = ActiveSupport::SafeBuffer.new
+        # content += close_element if options.fetch(:dismissible, false)
+        # content += message.html_safe
+        # content
+      # end
+    # end
 
     def close_element
       content_tag :button, type: 'button', class: 'close', 'data-dismiss': 'alert' do
@@ -16,9 +19,9 @@ module FlashRailsMessages
       end
     end
 
-    def default_alert_classes
-      'alert'
-    end
+    # def default_alert_classes
+      # 'alert'
+    # end
 
     def alert_type_classes
       {
@@ -30,7 +33,9 @@ module FlashRailsMessages
     end
 
     def custom_alert_classes
-      'alert-dismissible'
+      if options.fetch(:dismissible, false)
+        'alert-dismissible'
+      end
     end
   end
 end
