@@ -24,7 +24,7 @@ Or install it yourself as:
 
 To integrate **FlashRailsMessages** with [Bootstrap](http://getbootstrap.com/) run the next:
 
-```console
+```
 rails generate flash_rails_messages:install --bootstrap
 ```
 
@@ -35,7 +35,7 @@ NOTE: Be sure that you added Bootstrap to your application.
 
 To integrate **FlashRailsMessages** with [Zurb Foundation 3](http://foundation.zurb.com/) run the next:
 
-```console
+```
 rails generate flash_rails_messages:install --foundation
 ```
 
