@@ -50,9 +50,41 @@ RSpec.describe FlashRailsMessages::Helper do
         end
       end
 
+      context 'when flash message value is unsupported' do
+        it 'returns nothing' do
+          allow(subject).to receive(:flash).and_return({ notice: true })
+          expect(subject.render_flash_messages).to be_blank
+        end
+      end
+
+      context 'when flash type is of unsupported type' do
+        it 'returns nothing' do
+          allow(subject).to receive(:flash).and_return({ other: true })
+          expect(subject.render_flash_messages).to be_blank
+        end
+      end
+
       context 'when has more than one message' do
         it 'returns all the correct messages' do
           allow(subject).to receive(:flash).and_return({ alert: 'message1', notice: 'message2' })
+          alerts_expected = alert_element('message1', class: 'alert') +
+                            alert_element('message2', class: 'alert')
+          expect(subject.render_flash_messages).to eql(alerts_expected)
+        end
+      end
+
+      context 'when has more than one message including unsupported value' do
+        it 'returns all the correct messages' do
+          allow(subject).to receive(:flash).and_return({ alert: 'message1', success: true, notice: 'message2' })
+          alerts_expected = alert_element('message1', class: 'alert') +
+                            alert_element('message2', class: 'alert')
+          expect(subject.render_flash_messages).to eql(alerts_expected)
+        end
+      end
+
+      context 'when has more than one message including unsupported type' do
+        it 'returns all the correct messages' do
+          allow(subject).to receive(:flash).and_return({ alert: 'message1', bogus: 'entry', notice: 'message2' })
           alerts_expected = alert_element('message1', class: 'alert') +
                             alert_element('message2', class: 'alert')
           expect(subject.render_flash_messages).to eql(alerts_expected)
