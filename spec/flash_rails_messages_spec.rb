@@ -3,7 +3,9 @@ require 'spec_helper'
 RSpec.describe FlashRailsMessages::Helper do
   let(:subject) do
     ActionView::Base.new(
-      ActionView::LookupContext.new([])
+      ActionView::LookupContext.new([]),
+      {},
+      nil
     )
   end
 
