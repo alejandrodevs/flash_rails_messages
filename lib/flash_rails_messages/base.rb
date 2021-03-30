@@ -1,12 +1,5 @@
 module FlashRailsMessages
   class Base
-    TYPES = %i[
-      notice
-      success
-      alert
-      error
-    ].freeze
-
     include ActionView::Context
     include ActionView::Helpers::TagHelper
 
@@ -27,7 +20,7 @@ module FlashRailsMessages
     def messages(flash)
       Hash[flash]
         .symbolize_keys
-        .keep_if { |key, _| TYPES.include?(key) }
+        .keep_if { |key, _| alert_type_classes.include?(key) }
     end
 
     def alert_element(type, message)
