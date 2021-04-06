@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    flash_rails_messages (2.1.0)
+    flash_rails_messages (2.2.0)
       rails (>= 5.2)
 
 GEM
