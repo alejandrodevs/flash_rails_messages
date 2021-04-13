@@ -10,13 +10,22 @@ module FlashRailsMessages
     end
 
     def render(flash)
-      flash = Hash[flash].symbolize_keys
-      flash.map { |message| alert_element(*message) }.join.html_safe
+      messages(flash).map do |message|
+        alert_element(*message)
+      end.join.html_safe
     end
 
     private
 
+    def messages(flash)
+      Hash[flash]
+        .symbolize_keys
+        .keep_if { |key, _| alert_type_classes.include?(key) }
+    end
+
     def alert_element(type, message)
+      return unless message.respond_to?(:html_safe)
+
       content_tag :div, alert_options(type) do
         content = ActiveSupport::SafeBuffer.new
         content += close_element if options.fetch(:dismissible, false)
@@ -58,7 +67,6 @@ module FlashRailsMessages
       {}
     end
 
-    def custom_alert_classes
-    end
+    def custom_alert_classes; end
   end
 end
